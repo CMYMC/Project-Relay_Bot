@@ -11,7 +11,7 @@
 통신 경로를 물리적으로 재구성하는 자율 이동형 메시 중계 시스템**을 제안합니다.
 
 ## 2. 시스템 구성도 및 아키텍쳐 
-### 1. 시스템 구성도
+### 1) 시스템 구성도
 
 ![구성도](https://github.com/user-attachments/assets/d69be8c2-74f6-4a9e-a48f-e2fa3cfa0c20)
 
@@ -22,7 +22,7 @@
 
 
 
-### 2. 시스템 아키텍쳐
+### 2) 시스템 아키텍쳐
 ![아키텍쳐](https://github.com/user-attachments/assets/bab9a412-9955-4519-b8e1-1606b5ec4da5)
 
 본 시스템은 **ROS 2**를 미들웨어로 사용하며, **Batman-adv** 커널 모듈을 통해 투명한(Transparent) 메시 네트워크를 형성합니다.
@@ -53,7 +53,7 @@ Intel-4th-Project
 
 ---
 ## 3. 주요 기능 
-### 1. BATMAN-adv  Mesh Network 
+### 1) BATMAN-adv  Mesh Network 
 - Layer-2 라우팅:  IP 충돌 없이 MAC 주소 기반으로 동작하여 기지국 범위가 바뀌어도 동일 IP 사용 가능
 - TQ (Transmission Quality) 지표 활용: 단순 신호 세기(RSSI)가 아닌 실제 패킷 전송 성공률을 기반으로 경로를 설정하여 신뢰성 확보
 
@@ -66,7 +66,7 @@ Intel-4th-Project
 
 
 
-### 2. 통신 품질 기반 최적 위치 탐색이동
+### 2) 통신 품질 기반 최적 위치 탐색이동
 
 ![터틀봇](https://github.com/user-attachments/assets/cf74ff0e-0709-4199-8b8f-48d087297d18)
 
@@ -84,7 +84,7 @@ Intel-4th-Project
   - 사전 지도나 위치 확인이 필요 없음
   - 불안정한 환경에 적합한 가볍고 반응형 제어
 
-### 3. 실시간 관제 시스템 GUI (Qt Application)
+### 3) 실시간 관제 시스템 GUI (Qt Application)
 ![PI_Dashboard_MeshOn](https://github.com/user-attachments/assets/c4bf4263-5d42-43bd-b20a-33c4d1e441d7)
 
 * 영상 스트리밍: Body Cam에서 전송되는 영상 실시간 모니터링
@@ -149,13 +149,13 @@ https://github.com/user-attachments/assets/57877833-89f8-40b0-a458-0ba9fd22433c
 
 ## 7. 개발 후기 
 
-**1. batman-adv 실효성 검증과 주행 알고리즘의 문제**  
+**1) batman-adv 실효성 검증과 주행 알고리즘의 문제**  
 이번 프로젝트를 통해 기존의 인프라 의존적인 통신 방식에서 벗어나 Ad-hoc 및 Mesh Network 기술의 실질적인 응용 가능성을 확인할 수 있었습니다. 아쉬운 점은 RelayBot은 SLAM대신 통신 품질(TQ) 변화량만을 지표로 삼다보니 한계가 있었습니다. TQ값 특성상 지연시간과 계속 TQ경로가 변경되니 RelayBot이 목표 지점을 찾는데 시간이 길었습니다. 로직의 개선할 필요성을 느꼇습니다.
 
-**2. 프로토콜 선정과 시스템 통합 역량**  
+**2) 프로토콜 선정과 시스템 통합 역량**  
 프로토콜을 선정하는 과정에서 Hotspot, IBSS 등을 비교 분석하면서 네트워크에 대한 이해도를 높이고 batman-adv  커널 모듈의 시스템 명령어를 파싱하여 Qt 어플리케이션에서 네트워크 상태를 시각화하는 기술을 익히며, 하드웨어와 소프트웨어를 연결하는 시스템 엔지니어링 역량을 키웠습니다.
 
-**3 데이터 기반 분석의 필요성 체감**  
+**3) 데이터 기반 분석의 필요성 체감**  
 TQ 값 변동의 정확한 원인을 파악하기 위해 환경 변수(거리, 신호세기 등)를 로그 데이터로 기록하여 통계적으로 분석하지 못한 점이 아쉬움으로 남습니다. 차후 프로젝트에서는 데이터 수집 파이프라인을 구축하여 근거 중심의 최적화를 수행하고자 합니다.
 
 
